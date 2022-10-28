@@ -1,0 +1,146 @@
+create table text(
+    num         number(5),
+    title       varchar2(100),
+    content     varchar2(3000),
+    userID      varchar2(20),
+    reg_date    date,
+    viewCnt     number(6),
+    primary key(num)
+);
+
+create sequence text_seq start with 1 increment by 1;
+insert into text values(text_seq.nextval, '배송은 언제되나요', '10/1에 결제를 했는데 아직 배송이 안왔습니다. 배송은 언제 될까요?', 'realhm', '2022-10-05', '4');
+
+create table member1(
+    name    varchar2(10),
+    userid  varchar2(10),
+    pwd     varchar2(10),
+    email   varchar2(20),
+    phone   char(13),
+    primary key(userid)
+);
+SELECT TO_CHAR(SYSDATE, 'yyyy-mm-dd') FROM DUAL;
+insert into text values(text_seq.nextval, '이상품 진품인가요', '10/1에 결제를 했는데 결제금액이 이상합니다.', 'realhm2', sysdate, '6');
+ALTER TABLE text ADD fileP varchar2(50);
+
+CREATE TABLE board(
+    num     number(5)   primary key,
+    name    varchar(30),
+    email   varchar(30),
+    pwd     varchar(30),
+    title   varchar(30),
+    content varchar(1000),
+    writedate   DATE    DEFAULT SYSDATE,
+    readcount   number  default 0
+);
+CREATE SEQUENCE board_seq start with 1 increment by 1;
+
+INSERT INTO board(num, name, email, pwd, title, content)
+VALUES(board_seq.nextval, '작성자1', 'writer1@naver.com', '1234', '제목1', '내용1'); 
+
+INSERT INTO board(num, name, email, pwd, title, content)
+VALUES(board_seq.nextval, '작성자2', 'writer2@naver.com', '1234', '제목2', '내용2');
+
+INSERT INTO board(num, name, email, pwd, title, content)
+VALUES(board_seq.nextval, '작성자3', 'writer1@naver.com', '1234', '제목3', '내용3');
+
+create table notice(
+    num         number(5),
+    title       varchar2(100),
+    content     varchar2(3000),
+    userID      varchar2(20),
+    reg_date    date,
+    viewCnt     number(6),   
+    primary key(num)
+);
+create sequence notice_seq start with 1 increment by 1;
+
+create table product (
+    code number(5),
+    name varchar2(100),
+    price number(8),
+    pictureurl varchar2(50),
+    description varchar2(1000),
+    reg_date date,
+    arrivalAdd varchar2(100),
+    primary key (code)
+);
+create sequence table_seq start with 1 increment by 1;
+
+insert into product values(product_seq.nextval, '반바지01', 8000, '11.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지01', 8000, '21.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩01', 8000, '31.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지02', 8000, '12.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지02', 8000, '22.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩02', 8000, '32.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지03', 8000, '13.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지03', 8000, '23.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩03', 8000, '33.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지04', 8000, '14.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지04', 8000, '24.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩04', 8000, '34.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지05', 8000, '15.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지05', 8000, '25.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩05', 8000, '35.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지06', 8000, '16.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지06', 8000, '26.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩06', 8000, '36.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지07', 8000, '17.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지07', 8000, '27.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩07', 8000, '37.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지08', 8000, '18.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지08', 8000, '28.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩08', 8000, '38.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '반바지09', 8000, '19.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '청바지09', 8000, '29.jfif', '6조샵 제품', '2022-10-21', null);
+insert into product values(product_seq.nextval, '패딩09', 8000, '39.jfif', '6조샵 제품', '2022-10-21', null);
+
+
+insert into text values(text_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm2', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로3', '내용 매크로3', 'hong1', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm2', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로3', '내용 매크로3', 'hong1', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm2', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로3', '내용 매크로3', 'hong1', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm2', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로3', '내용 매크로3', 'hong1', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm2', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로3', '내용 매크로3', 'hong1', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm2', SYSDATE, '4', null);
+insert into text values(text_seq.nextval, '제목 매크로3', '내용 매크로3', 'hong1', SYSDATE, '4', null);
+
+insert into notice values(notice_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로3', '내용 매크로3', '관리자', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로3', '내용 매크로3', '관리자', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로3', '내용 매크로3', '관리자', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로3', '내용 매크로3', '관리자', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로1', '내용 매크로1', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로2', '내용 매크로2', 'realhm', SYSDATE, '4');
+insert into notice values(notice_seq.nextval, '제목 매크로3', '내용 매크로3', '관리자', SYSDATE, '4');
+
+create table cart(
+code number(5),
+name varchar2(100),
+price number(8),
+pictureurl varchar2(50),
+description varchar2(1000),
+count number(5),
+primary key(code)
+);
+
+create sequence cart_seq start with 1 increment by 1;
+
+
